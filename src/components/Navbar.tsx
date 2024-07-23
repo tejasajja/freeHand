@@ -1,17 +1,17 @@
 'use client'
-import Link from 'next/link';
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "./ui/button";
-import UserAccountnav from "./UserAccountnav";
-import { buttonVariants } from './ui/button';
-import { getServerSession } from 'next-auth';
-import { useSession } from 'next-auth/react';
+// import Link from 'next/link';
+// import {
+//     DropdownMenu,
+//     DropdownMenuContent,
+//     DropdownMenuItem,
+//     DropdownMenuTrigger,
+// } from "@/components/ui/dropdown-menu";
+// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+// import { Button } from "./ui/button";
+// import UserAccountnav from "./UserAccountnav";
+// import { buttonVariants } from './ui/button';
+// import { getServerSession } from 'next-auth';
+// import { useSession } from 'next-auth/react';
 
 const Navbar = () => {
     // const { data: session } = useSession();

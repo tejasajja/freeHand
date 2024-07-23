@@ -1,14 +1,12 @@
 "use client";
 
 import React from 'react';
-import Provider from '@/components/Provider';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store';
 import Menu from '@/components/draw/Menu';
 import Toolbox from '@/components/draw/Toolbox';
 import Cam from '@/components/draw/Cam';
 import styles from './page.module.css'; // Ensure to create and import your CSS module
-import withAuth from '@/hoc/withAuth';
 
 const Page = () => {
   return (

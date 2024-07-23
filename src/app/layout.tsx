@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 };
 
 import { cn } from "@/lib/utils"
-import Provider from "@/components/Provider";
  
 const fontSans = FontSans({
   subsets: ["latin"],
