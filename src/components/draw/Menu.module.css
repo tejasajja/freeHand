@@ -1,23 +1,43 @@
+/* Base and components from Tailwind are no longer needed */
 .menuContainer {
-    @apply absolute px-5 py-1 flex justify-between w-1/4 left-1/2 top-20 rounded-md;
-    border: 1px solid theme('colors.border1');
+    position: absolute;
+    padding-left: 1.25rem; /* Equivalent to px-5 */
+    padding-right: 1.25rem; /* Equivalent to px-5 */
+    padding-top: 0.25rem; /* Equivalent to py-1 */
+    padding-bottom: 0.25rem; /* Equivalent to py-1 */
+    display: flex;
+    justify-content: space-between;
+    width: 25%; /* Equivalent to w-1/4 */
+    left: 50%; /* Equivalent to left-1/2 */
+    top: 7rem; /* Equivalent to top-20 */
+    border-radius: 0.375rem; /* Equivalent to rounded-md */
+    border: 1px solid var(--color-border1); /* Using custom property for border color */
     transform: translateX(-50%);
-    box-shadow: theme('colors.shadow1');
-    background-color: theme('colors.background1');
-
-    .iconWrapper {
-        @apply cursor-pointer flex justify-center items-center h-10 w-10 rounded-md;
-
-        &:hover, &.active {
-            background-color: theme('colors.text2');
-        }
-        .icon {
-            color: theme('colors.text1');
-            font-size: 20px;
-        }
-    }
-}
-.customCursor {
+    box-shadow: var(--color-shadow1); /* Using custom property for box-shadow */
+    background-color: var(--color-background1); /* Using custom property for background color */
+  }
+  
+  .ico {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem; /* Equivalent to h-10 */
+    width: 2.5rem; /* Equivalent to w-10 */
+    border-radius: 0.375rem; /* Equivalent to rounded-md */
+  }
+  
+  .ico:hover,
+  .ico.active {
+    background-color: var(--color-text2); /* Using custom property for hover and active background color */
+  }
+  
+  .icon {
+    color: var(--color-text1); /* Using custom property for text color */
+    font-size: 1.25rem; /* Equivalent to 20px */
+  }
+  
+  .customCursor {
     position: fixed;
     pointer-events: none;
     z-index: 1000;
@@ -25,6 +45,7 @@
   }
   
   .customCursorIcon {
-    font-size: 24px;
+    font-size: 1.5rem; /* Equivalent to 24px */
     color: black;
   }
+  
