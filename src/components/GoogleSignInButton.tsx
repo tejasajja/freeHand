@@ -8,7 +8,7 @@ interface GoogleSignInButtonProps {
 }
 
 const GoogleSignInButton: FC<GoogleSignInButtonProps> = ({ children }) => {
-  const loginWithGoogle = () => signIn('google',{callbackUrl:'http://localhost:3000'})
+  const loginWithGoogle = () => signIn('google',{callbackUrl:'https://freehanddraw.com/board'})
 
   return (
     <Button onClick={loginWithGoogle} className='w-full bg-blue-800 rounded-xl flex items-center justify-center'>
