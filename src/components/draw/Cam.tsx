@@ -18,6 +18,7 @@ const Cam: React.FC = () => {
   const webcamRef = useRef<Webcam | null>(null);
   const videoCanvasRef = useRef<HTMLCanvasElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  
   const cursorRef = useRef<HTMLDivElement | null>(null);
   const drawHistory = useRef<ImageData[]>([]);
   const historyPointer = useRef<number>(0);
