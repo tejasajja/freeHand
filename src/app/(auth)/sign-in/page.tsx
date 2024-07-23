@@ -1,10 +1,10 @@
-import SignInForm from '@/components/form/SignInForm'
-import React from 'react'
+// import SignInForm from '@/components/form/SignInForm'
+// import React from 'react'
 
-const page = () => {
-  return (
-    <div className='w-full'><SignInForm/></div>
-  )
-}
+// const page = () => {
+//   return (
+//     <div className='w-full'><SignInForm/></div>
+//   )
+// }
 
-export default page
+// export default page

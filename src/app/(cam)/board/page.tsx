@@ -13,7 +13,7 @@ import withAuth from '@/hoc/withAuth';
 const Page = () => {
   return (
     <ReduxProvider store={store}>
-        <Provider>
+        {/* <Provider> */}
       <div className={styles.container}>
         <Cam />
         <div className={styles.menu}>
@@ -23,9 +23,9 @@ const Page = () => {
           <Toolbox />
         </div>
       </div>
-      </Provider>
+      {/* </Provider> */}
     </ReduxProvider>
   );
 };
 
-export default withAuth(Page);
+export default Page ;

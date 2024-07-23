@@ -57,13 +57,85 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+  
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .menuContainer {
+    @apply absolute px-5 py-1 flex justify-between w-1/4 left-1/2 top-20 rounded-md;
+    border: 1px solid theme('colors.border1');
+    transform: translateX(-50%);
+    box-shadow: theme('colors.shadow1');
+    background-color: theme('colors.background1');
+  }
+
+  .iconWrapper {
+    @apply cursor-pointer flex justify-center items-center h-10 w-10 rounded-md;
+  }
+
+  .iconWrapper:hover,
+  .iconWrapper.active {
+    background-color: theme('colors.text2');
+  }
+
+  .icon {
+    color: theme('colors.text1');
+    font-size: 20px;
+  }
+
+  .customCursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    display: none;
+  }
+
+  .customCursorIcon {
+    font-size: 24px;
+    color: black;
+  }
+
+  .toolboxContainer {
+    @apply absolute p-5 top-1/4 left-20 w-64 rounded-md;
+    box-shadow: var(--color-shadow1);
+    border: 1px solid var(--color-border1);
+    background-color: var(--color-background1);
+  }
+  
+  .toolItem {
+    @apply mb-5;
+  }
+  
+  .toolText {
+    @apply text-xs;
+    color: var(--color-text1);
+  }
+  
+  .itemContainer {
+    @apply flex justify-between mt-2;
+  }
+  
+  .colorBox {
+    @apply h-5 w-5 mr-1 rounded-sm cursor-pointer;
+  }
+  
+  .colorBox:hover,
+  .colorBox.active {
+    border: 1.5px solid var(--color-border2);
+    box-shadow: var(--color-shadow2);
+  }
+  
+  @media screen and (max-width: 640px) {
+    .toolboxContainer {
+      @apply bottom-0 w-full left-0;
+      top: unset;
+    }
   }
 }
