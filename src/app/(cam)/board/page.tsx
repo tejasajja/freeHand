@@ -1,16 +1,19 @@
 "use client";
 
 import React from 'react';
-import { Provider } from 'react-redux';
+import Provider from '@/components/Provider';
+import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store';
 import Menu from '@/components/draw/Menu';
 import Toolbox from '@/components/draw/Toolbox';
 import Cam from '@/components/draw/Cam';
 import styles from './page.module.css'; // Ensure to create and import your CSS module
+import withAuth from '@/hoc/withAuth';
 
 const Page = () => {
   return (
-    <Provider store={store}>
+    <ReduxProvider store={store}>
+        <Provider>
       <div className={styles.container}>
         <Cam />
         <div className={styles.menu}>
@@ -20,8 +23,9 @@ const Page = () => {
           <Toolbox />
         </div>
       </div>
-    </Provider>
+      </Provider>
+    </ReduxProvider>
   );
 };
 
-export default Page;
+export default withAuth(Page);

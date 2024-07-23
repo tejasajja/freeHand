@@ -9,7 +9,6 @@ interface GoogleSignInButtonProps {
 
 const GoogleSignInButton: FC<GoogleSignInButtonProps> = ({ children }) => {
   const loginWithGoogle = () => signIn('google',{callbackUrl:'https://freehanddraw.com/board'})
-
   return (
     <Button onClick={loginWithGoogle} className='w-full bg-blue-800 rounded-xl flex items-center justify-center'>
       <img
@@ -21,5 +20,4 @@ const GoogleSignInButton: FC<GoogleSignInButtonProps> = ({ children }) => {
     </Button>
   );
 };
-
 export default GoogleSignInButton;
