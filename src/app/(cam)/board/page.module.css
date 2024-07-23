@@ -1,0 +1,32 @@
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    z-index: 10; 
+  }
+  
+  .toolbox {
+    position: absolute;
+    top: 120px; /* Adjust based on your layout */
+    left: 00%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+  
+  .cam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index:9; 
+  }
+  
