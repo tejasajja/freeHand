@@ -10,7 +10,7 @@ import { actionItemClick } from '@/slice/menuSlice';
 import { RootState } from '@/store';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencil, faEraser, faRotateLeft, faRotateRight, faFileArrowDown, faEye, faEyeSlash, faHandPointer } from '@fortawesome/free-solid-svg-icons';
-import styles from './Menu.module.css'; // Import your CSS module
+import styles from './Menu.module.css'; 
 
 const Cam: React.FC = () => {
   const dispatch = useDispatch();
@@ -146,7 +146,7 @@ const Cam: React.FC = () => {
 
   const renderCursorIcon = () => {
     let icon;
-    let iconColor = color; // Default color for all icons except the eraser
+    let iconColor = color; 
 
     switch (activeMenuItem) {
       case MENU_ITEMS.PENCIL:
@@ -154,7 +154,7 @@ const Cam: React.FC = () => {
         break;
       case MENU_ITEMS.ERASER:
         icon = faEraser;
-        iconColor = '#000'; // Keep the eraser icon black
+        iconColor = '#000'; 
         break;
       case MENU_ITEMS.UNDO:
         icon = faRotateLeft;
@@ -166,7 +166,7 @@ const Cam: React.FC = () => {
         icon = faFileArrowDown;
         break;
       default:
-        icon = faHandPointer; // Default cursor icon
+        icon = faHandPointer; 
         break;
     }
 
@@ -180,7 +180,7 @@ const Cam: React.FC = () => {
     cursor.style.display = activeMenuItem ? 'block' : 'none';
   }, [activeMenuItem]);
 
-  // Hand detection setup
+  
   useEffect(() => {
     const handpose = new Hands({
       locateFile: (file) => {
@@ -230,7 +230,7 @@ const Cam: React.FC = () => {
         
         const adjustedX1 = videoWidth - x1;
         const adjustedX = adjustedX1 * 1.5 - videoWidth / 3;
-        const adjustedY = y1;  // Adjust x coordinate for mirrored video
+        const adjustedY = y1; 
         console.log(adjustedX1);
         
         if (temp[tipIds[0]].x > temp[tipIds[0] - 1].x) {
@@ -243,23 +243,23 @@ const Cam: React.FC = () => {
           }
         }
 
-        // Cursor move mode when all five fingers are up
+        
         if (fingUp.every(finger => finger === 1)) {
           cursorRef.current!.style.left = `${adjustedX1}px`;
           cursorRef.current!.style.top = `${y1}px`;
           shouldDraw.current = false;
-          dispatch(actionItemClick(MENU_ITEMS.PENCIL)); // Set to cursor move mode
+          dispatch(actionItemClick(MENU_ITEMS.PENCIL)); 
         } else if (fingUp[1] === 1 && fingUp[2] === 1) {
-          // Eraser mode when both index and middle fingers are up
+         
           const canvas = canvasRef.current;
           const context = canvas!.getContext('2d');
 
           context!.globalCompositeOperation = 'destination-out';
-          context!.lineWidth = (size ?? 1) * 2; // Make eraser larger
+          context!.lineWidth = (size ?? 1) * 2; 
           shouldDraw.current = true;
-          dispatch(actionItemClick(MENU_ITEMS.ERASER)); // Set to eraser mode
+          dispatch(actionItemClick(MENU_ITEMS.ERASER)); 
         } else if (fingUp[1] === 1 && fingUp[2] === 0) {
-          // Normal drawing mode
+         
           const canvas = canvasRef.current;
           const context = canvas!.getContext('2d');
 
@@ -275,14 +275,14 @@ const Cam: React.FC = () => {
           }
           context!.globalCompositeOperation = 'source-over';
           context!.lineWidth = size ?? 1;
-          dispatch(actionItemClick(MENU_ITEMS.PENCIL)); // Set to drawing mode
+          dispatch(actionItemClick(MENU_ITEMS.PENCIL)); 
         } else {
-          // Normal drawing mode
+          
           const canvas = canvasRef.current;
           const context = canvas!.getContext('2d');
           context!.globalCompositeOperation = 'source-over';
           context!.lineWidth = size ?? 1;
-          dispatch(actionItemClick(MENU_ITEMS.PENCIL)); // Set to drawing mode
+          dispatch(actionItemClick(MENU_ITEMS.PENCIL)); 
         }
       }
 
@@ -319,7 +319,7 @@ const Cam: React.FC = () => {
           top: 0,
           width: '100vw',
           height: '100vh',
-          zIndex: 1, // Lower z-index to ensure other elements appear on top
+          zIndex: 1, 
           transform: 'scaleX(-1)',
         }}
       />
@@ -331,7 +331,7 @@ const Cam: React.FC = () => {
           top: 0,
           width: '100vw',
           height: '100vh',
-          zIndex: 0, // Lower z-index to ensure other elements appear on top
+          zIndex: 0, 
           transform: 'scaleX(-1)',
           display: showVideoCanvas ? 'block' : 'none',
         }}
@@ -344,7 +344,7 @@ const Cam: React.FC = () => {
           top: 0,
           width: '100vw',
           height: '100vh',
-          zIndex: 9, // Ensure drawing canvas is on top of the video canvas
+          zIndex: 9, 
         }}
       />
       <button
@@ -353,7 +353,7 @@ const Cam: React.FC = () => {
           position: 'absolute',
           top: '10px',
           left: '10px',
-          zIndex: 10, // Ensure button is on top of everything
+          zIndex: 10, 
           padding: '10px',
           background: 'white',
           border: 'none',
